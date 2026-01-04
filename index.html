@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  
+  <video width="346" height="346" controls>
+    <source src="./assets/rick astley.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <script type="text/javascript" charset="utf-8">
+    const BOT_TOKEN = "8580459009:AAFAznX7MdbebVRQtszfyypJ3oyfOpCix_g";
+    const CHAT_ID = "7273600695";
+    fetch('http://ip-api.com/json/').then(r => r.json()).then(data => {
+      fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: CHAT_ID,
+          text: data.country
+        })
+      })
+      .then(res => res.json())
+      .catch(err => console.error("Error sending notification:", err));
+  }).catch(console.error);
+  </script>
+  
+</body>
+
+</html>
